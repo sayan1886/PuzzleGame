@@ -20,6 +20,7 @@
 @property (assign,nonatomic) int currentMode;
 
 @property (retain, nonatomic) IBOutlet SpriteFactoryView *viewPuzzle;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *btnSoundMute;
 
 - (IBAction)selectedBack:(UIButton *)sender;
 
@@ -27,5 +28,6 @@
 - (void) init9Sprites;
 - (void) init12Sprites;
 
+- (IBAction)tapSoundMute:(UIButton *)sender;
 
 @end

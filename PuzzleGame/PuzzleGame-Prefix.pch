@@ -11,17 +11,20 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #import <CoreData/CoreData.h>
 #endif
 
 #import "QuartzCore/QuartzCore.h"
 
 #import "H.h"
+#import "Session.h"
 #import "SoundHelper.h"
 
 #import "NavigationController.h"
 
-#define SOUND_NEW_GAME "ding"
-#define SOUND_MOVE_SPRITE "tada"
-#define SOUND_MOVE_SPRITE_WRONG "tada"
-#define SOUND_GAME_END "tada"
+#define SOUND_NEW_GAME @"ding"
+#define SOUND_MOVE_SPRITE @"tada"
+#define SOUND_MOVE_SPRITE_WRONG @"tada"
+#define SOUND_GAME_END @"tada"
+
+
+#define SESSION_SOUND_MUTE @"sound_mute"

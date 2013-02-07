@@ -12,7 +12,9 @@
 
 #import "GameIcon.h"
 
-@interface MenuController : BaseController
+#import "MKStoreManager.h"
+
+@interface MenuController : BaseController<MKStoreKitDelegate>
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *viewIconsList;
 

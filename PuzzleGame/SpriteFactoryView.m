@@ -17,12 +17,18 @@
 @interface SpriteFactoryView()
 
 @property (retain, nonatomic) UIImage * puzzle;
-@property (retain,nonatomic) NSArray * sprites;
+
+@property (retain,nonatomic) NSMutableDictionary * spritesBuffer;
+
+@property (retain,nonatomic) NSString * currentKey;
 
 - (Sprite*) findColisionsWithSprite:(Sprite*)sprite;
 
+- (void) clearSprites;
 - (void) shuffleSprites;
 - (void) checkEndGameCondition;
+
+- (NSArray*) currentSprites;
 
 @end
 
@@ -40,13 +46,32 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         self.soundOn = YES;
+        self.spritesBuffer = [NSMutableDictionary new];
+        self.currentKey = @"";
     }
     return self;
 }
 
 
 - (void) initSpritesRows:(int)rows columns:(int)columns image:(NSString*)image {
+    NSString * key = [NSString stringWithFormat:@"%dx%d",rows,columns];
+    
+    if([self.currentKey isEqualToString:key]) {
+        [self shuffleSprites];
+        return;
+    }
+    
+    self.currentKey = key;
     [self clearSprites];
+    
+    if([self currentSprites] != nil) {
+        NSArray * sprites = [self currentSprites];
+        for (Sprite * sprite in sprites) {
+            [self addSubview:sprite];
+        }
+        [self shuffleSprites];
+        return;
+    }
     
     self.puzzle = nil;
     self.puzzle = [UIImage imageNamed:image];
@@ -84,13 +109,16 @@
         }
     }
     CGImageRelease(cgImageRef);
-    self.sprites = sprites;
+    
+    [self.spritesBuffer setObject:sprites forKey:self.currentKey];
     [self shuffleSprites];
-    [SoundHelper playSound:CFSTR(SOUND_NEW_GAME)];
+    [SoundHelper playSound:SOUND_NEW_GAME];
 }
 
 -(Sprite*) findColisionsWithSprite:(Sprite*)sprite {
-    for (Sprite * sp in self.sprites) {
+    NSArray * sprites = [self currentSprites];
+    
+    for (Sprite * sp in sprites) {
         if([sp isEqual:sprite]) {
             continue;
         }
@@ -111,8 +139,9 @@
     if(sp) {
         sp.highlighted = YES;
     }
-    
-    for (Sprite * s in self.sprites) {
+
+    NSArray * sprites = [self currentSprites];
+    for (Sprite * s in sprites) {
         if(![sp isEqual:s]) {
             s.highlighted = NO;
         }
@@ -132,27 +161,29 @@
 }
 
 - (void) clearSprites {
-    if(self.sprites != nil) {
-        for (Sprite * sprite in self.sprites) {
+    NSArray * sprites = [self currentSprites];
+    if(sprites != nil) {
+        for (Sprite * sprite in sprites) {
             [sprite removeFromSuperview];
         }
     }
-    self.sprites = nil;
 }
 
 - (void) shuffleSprites {
+    
+    NSArray * sprites = [self currentSprites];
     NSMutableArray * positions = [NSMutableArray new];
     
-    for (Sprite * sprite in self.sprites) {
+    for (Sprite * sprite in sprites) {
         [positions addObject:[NSValue valueWithCGRect:sprite.frame]];
     }
     
-    for (int i = 0; i < [self.sprites count]; i++) {
+    for (int i = 0; i < [sprites count]; i++) {
         [positions shuffle];
     }
     
     int index = 0;
-    for (Sprite * sprite in self.sprites) {
+    for (Sprite * sprite in sprites) {
         [sprite moveToPosition:[[positions objectAtIndex:index] CGRectValue] animated:YES];
         index++;
     }
@@ -160,21 +191,42 @@
 
 - (void) checkEndGameCondition {
     BOOL gameEnded = YES;
-    for (Sprite * sprite in self.sprites) {
+    NSArray * sprites = [self currentSprites];
+    for (Sprite * sprite in sprites) {
         if(![sprite isCorrectPosition]) {
             gameEnded = NO;
         }
     }
     
     if(!gameEnded) {
-        [SoundHelper playSound:CFSTR(SOUND_MOVE_SPRITE_WRONG)];
+        [SoundHelper playSound:SOUND_MOVE_SPRITE_WRONG];
         return;
     }
     
     //TODO: game ended event;
-    [SoundHelper playSound:CFSTR(SOUND_GAME_END)];
+    [SoundHelper playSound:SOUND_GAME_END];
     rmlog(@"game ended");
     [H alert:@"" description:@"you win!"];
+}
+
+- (NSArray*) currentSprites {
+    return [self.spritesBuffer objectForKey:self.currentKey];
+}
+
+- (BOOL) checkCanMoveSprite:(Sprite*)sprite {
+    NSArray * sprites = [self currentSprites];
+    BOOL result = YES;
+    for (Sprite * sp in sprites) {
+        if([sp isEqual:sprite]) {
+            continue;
+        }
+        
+        if(sp.isBusy) {
+            result = NO;
+        }
+    }
+    
+    return result;
 }
 
 @end

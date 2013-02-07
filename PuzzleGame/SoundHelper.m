@@ -8,28 +8,49 @@
 
 #import "SoundHelper.h"
 
+@interface SoundHelper()
+
+@end
+
 @implementation SoundHelper
 
-+ (void) playSound:(CFStringRef)sound {
-    
-    NSError * setCategoryError;
-    
-    CFBundleRef mainBundle = CFBundleGetMainBundle();
-    CFURLRef soundFileURLRef = CFBundleCopyResourceURL(mainBundle, sound, CFSTR("wav"), NULL);
-    SystemSoundID soundId;
-    AudioServicesCreateSystemSoundID(soundFileURLRef, &soundId);
+static AVAudioPlayer * backgroundPlayer;
+static AVAudioPlayer * soundPlayer;
 
-    AudioServicesPlaySystemSound(soundId);
-    CFRelease(soundFileURLRef);
-    AudioServicesPlaySystemSound(soundId);
+static bool _mute = NO;
+
++ (void) playSound:(NSString*)sound {
+    if(!_mute) {
+        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"ding" ofType:@"wav"];
+        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+        soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+        soundPlayer.numberOfLoops = 0; //infinite
+        soundPlayer.volume = 1.0f;
+        [soundPlayer play];
+    }
 }
 
 + (void) playBackground {
- //   NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"ambient" ofType:@"mp3"];
- //   NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
- //   AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
- //   player.numberOfLoops = -1; //infinite
- //   [player play];
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"ambient" ofType:@"mp3"];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    backgroundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+    backgroundPlayer.numberOfLoops = -1; //infinite
+    if(!_mute) {
+        backgroundPlayer.volume = 0.3f;
+    } else {
+        backgroundPlayer.volume = 0.0f;
+    }
+    [backgroundPlayer play];
+}
+
++ (void) muteSound:(BOOL)mute {
+    _mute = mute;
+    if(_mute) {
+        backgroundPlayer.volume = 0.0f;
+        [soundPlayer stop];
+    } else {
+        backgroundPlayer.volume = 0.3f;
+    }
 }
 
 @end

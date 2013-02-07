@@ -28,6 +28,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    if([Session getBoolForKey:SESSION_SOUND_MUTE]) {
+        [self.btnSoundMute setImage:[UIImage imageNamed:@"header_soundOFF.png"] forState:UIControlStateNormal];
+    } else {
+        [self.btnSoundMute setImage:[UIImage imageNamed:@"header_sound_ON.png"] forState:UIControlStateNormal];
+    }
+    
     self.currentMode = GAME_MODE_6;
 }
 
@@ -78,7 +85,20 @@
     [self.viewPuzzle initSpritesRows:4 columns:3 image:self.imagename];
 }
 
+- (IBAction)tapSoundMute:(UIButton *)sender {
+    if([Session getBoolForKey:SESSION_SOUND_MUTE]) {
+        [self.btnSoundMute setImage:[UIImage imageNamed:@"header_sound_ON.png"] forState:UIControlStateNormal];
+        [Session setBool:NO forKey:SESSION_SOUND_MUTE];
+        [SoundHelper muteSound:NO];
+    } else {
+        [self.btnSoundMute setImage:[UIImage imageNamed:@"header_soundOFF.png"] forState:UIControlStateNormal];
+        [Session setBool:YES forKey:SESSION_SOUND_MUTE];
+        [SoundHelper muteSound:YES];
+    }
+}
+
 - (void)viewDidUnload {
+    [self setBtnSoundMute:nil];
     [super viewDidUnload];
 }
 @end

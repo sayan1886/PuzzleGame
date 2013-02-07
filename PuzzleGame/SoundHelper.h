@@ -12,7 +12,9 @@
 
 @interface SoundHelper : NSObject
 
-+ (void) playSound:(CFStringRef)sound;
++ (void) playSound:(NSString*)sound;
 + (void) playBackground;
+
++ (void) muteSound:(BOOL)mute;
 
 @end

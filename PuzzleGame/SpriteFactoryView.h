@@ -19,4 +19,6 @@
 - (void) checkColisionsWithSpriteOnMove:(Sprite*)sprite;
 - (void) checkColisionsWithSpriteOnEndMove:(Sprite*)sprite;
 
+- (BOOL) checkCanMoveSprite:(Sprite*)sprite;
+
 @end

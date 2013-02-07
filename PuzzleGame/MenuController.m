@@ -10,6 +10,8 @@
 
 @interface MenuController ()
 
+@property (assign,nonatomic) BOOL puzzlesPurchased;
+
 - (void) initMenu;
 
 - (void) selectedGameFree:(GameIcon*)sender;
@@ -29,6 +31,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.puzzlesPurchased = NO;
+    
+    [MKStoreManager sharedManager].delegate = self;
+    self.puzzlesPurchased = [MKStoreManager additionalPuzzlePurchased];
+    
 	[self initMenu];
 }
 
@@ -45,6 +53,7 @@
     int intervalX = (320-3*iconWidth)/4;
     int intervalY = 10;
     
+    //free puzzles
     for (int i = 0; i < 3; i++) {
         GameIcon * gameIcon = [GameIcon new];
         gameIcon.imagename = [NSString stringWithFormat:@"cat_free_0%d.png",i+1];
@@ -55,9 +64,9 @@
         [self.view addSubview:gameIcon];
     }
     
-    
     int row = 0;
     int column = 0;
+    //paid puzzles
     for (int i = 3; i < 15; i++) {
         
         if(column == 3) {
@@ -83,7 +92,11 @@
 }
 
 - (void) selectedGamePaid:(GameIcon*)sender {
-    rmlog(@"no money no honey");
+    if([MKStoreManager additionalPuzzlePurchased]) {
+        
+    } else {
+        [[MKStoreManager sharedManager] byeAdditionalPuzzle];
+    }
 }
 
 - (void)viewDidUnload {
@@ -91,5 +104,16 @@
     [super viewDidUnload];
 }
 
+#pragma in-app-purchaze
+
+- (void)additianlPuzzlePurchased {
+    //TODO: ...
+    rmlog(@"new puzzles purchased");
+}
+
+- (void)failed {
+    //TODO: ....
+    rmlog(@"no money no honey");
+}
 
 @end

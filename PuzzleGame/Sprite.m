@@ -10,6 +10,8 @@
 
 @interface Sprite ()
 
+- (void) initSprite;
+
 @end
 
 @implementation Sprite
@@ -17,9 +19,29 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        [self initSprite];
     }
     return self;
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self initSprite];
+    }
+    return self;
+}
+
+- (id) init {
+    self = [super init];
+    if (self) {
+        [self initSprite];
+    }
+    return self;
+}
+
+- (void) initSprite {
+    self.isBusy = NO;
 }
 
 
@@ -29,6 +51,11 @@
 
 
 - (void) touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event {
+    
+    if(![self.spriteFactoryView checkCanMoveSprite:self]) {
+        return;
+    }
+    
     [super touchesMoved:touches withEvent:event];
     UITouch * touch = [touches anyObject];
     CGPoint location = [touch locationInView:self.superview];
@@ -37,13 +64,25 @@
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    if(![self.spriteFactoryView checkCanMoveSprite:self]) {
+        return;
+    }
+    
     [super touchesBegan:touches withEvent:event];
+    self.isBusy = YES;
     self.alpha = 0.5f;
     self.layer.zPosition = 1;
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    if(![self.spriteFactoryView checkCanMoveSprite:self]) {
+        return;
+    }
+    
     [super touchesEnded:touches withEvent:event];
+    self.isBusy = NO;
     self.alpha = 1;
     self.layer.zPosition = 0;
     [self.spriteFactoryView checkColisionsWithSpriteOnEndMove:self];

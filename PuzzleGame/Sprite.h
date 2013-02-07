@@ -22,6 +22,8 @@
 @property (assign,nonatomic) CGRect startFrame;
 @property (assign,nonatomic) CGRect beforeMoveFrame;
 
+@property (assign,nonatomic) BOOL isBusy;
+
 @property (retain,nonatomic) SpriteFactoryView * spriteFactoryView;
 
 - (CGRect) getRect;

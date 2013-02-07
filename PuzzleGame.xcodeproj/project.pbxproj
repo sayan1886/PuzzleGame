@@ -39,12 +39,14 @@
 		302EDF6A16BD97FD0000604C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302EDF6916BD97FD0000604C /* AVFoundation.framework */; };
 		302EDF6C16BD9AA10000604C /* ambient.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 302EDF6B16BD9AA10000604C /* ambient.mp3 */; };
 		302EDF6E16BD9B720000604C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302EDF6D16BD9B720000604C /* StoreKit.framework */; };
+		3078F9F116C3D11600AC36AF /* MKStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3078F9EE16C3D11600AC36AF /* MKStoreManager.m */; };
+		3078F9F216C3D11600AC36AF /* MKStoreObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3078F9F016C3D11600AC36AF /* MKStoreObserver.m */; };
+		3078F9F516C3E69700AC36AF /* GameView_iPhone5x.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3078F9F416C3E69700AC36AF /* GameView_iPhone5x.xib */; };
 		30F0865816B810C200982C04 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F0865716B810C200982C04 /* QuartzCore.framework */; };
 		30F0865B16B81B5C00982C04 /* SpriteFactoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F0865A16B81B5C00982C04 /* SpriteFactoryView.m */; };
 		30F76BA416B7C79100DC9149 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F76BA316B7C79100DC9149 /* UIKit.framework */; };
 		30F76BA616B7C79100DC9149 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F76BA516B7C79100DC9149 /* Foundation.framework */; };
 		30F76BA816B7C79100DC9149 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F76BA716B7C79100DC9149 /* CoreGraphics.framework */; };
-		30F76BAA16B7C79100DC9149 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F76BA916B7C79100DC9149 /* CoreData.framework */; };
 		30F76BB016B7C79100DC9149 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30F76BAE16B7C79100DC9149 /* InfoPlist.strings */; };
 		30F76BB216B7C79100DC9149 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F76BB116B7C79100DC9149 /* main.m */; };
 		30F76BB616B7C79100DC9149 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F76BB516B7C79100DC9149 /* AppDelegate.m */; };
@@ -55,7 +57,6 @@
 		30F76BC916B7C82000DC9149 /* MenuView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F76BC816B7C82000DC9149 /* MenuView_iPhone.xib */; };
 		30F76BCB16B7C86300DC9149 /* MenuView_iPhone5x.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F76BCA16B7C86300DC9149 /* MenuView_iPhone5x.xib */; };
 		30F76BCD16B7C87400DC9149 /* GameView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F76BCC16B7C87400DC9149 /* GameView_iPhone.xib */; };
-		30F76BCF16B7C89100DC9149 /* GameView_iPhone5x.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F76BCE16B7C89100DC9149 /* GameView_iPhone5x.xib */; };
 		30F76BD216B7C8FF00DC9149 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F76BD116B7C8FF00DC9149 /* MenuController.m */; };
 		30F76BD516B7C91100DC9149 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F76BD416B7C91100DC9149 /* GameController.m */; };
 		30F76BD816B7C98500DC9149 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F76BD716B7C98500DC9149 /* BaseController.m */; };
@@ -100,6 +101,11 @@
 		302EDF6916BD97FD0000604C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		302EDF6B16BD9AA10000604C /* ambient.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient.mp3; sourceTree = "<group>"; };
 		302EDF6D16BD9B720000604C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3078F9ED16C3D11600AC36AF /* MKStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreManager.h; sourceTree = "<group>"; };
+		3078F9EE16C3D11600AC36AF /* MKStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStoreManager.m; sourceTree = "<group>"; };
+		3078F9EF16C3D11600AC36AF /* MKStoreObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreObserver.h; sourceTree = "<group>"; };
+		3078F9F016C3D11600AC36AF /* MKStoreObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStoreObserver.m; sourceTree = "<group>"; };
+		3078F9F416C3E69700AC36AF /* GameView_iPhone5x.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameView_iPhone5x.xib; sourceTree = "<group>"; };
 		30F0865716B810C200982C04 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		30F0865916B81B5C00982C04 /* SpriteFactoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteFactoryView.h; sourceTree = "<group>"; };
 		30F0865A16B81B5C00982C04 /* SpriteFactoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteFactoryView.m; sourceTree = "<group>"; };
@@ -107,7 +113,6 @@
 		30F76BA316B7C79100DC9149 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		30F76BA516B7C79100DC9149 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		30F76BA716B7C79100DC9149 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		30F76BA916B7C79100DC9149 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		30F76BAD16B7C79100DC9149 /* PuzzleGame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PuzzleGame-Info.plist"; sourceTree = "<group>"; };
 		30F76BAF16B7C79100DC9149 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		30F76BB116B7C79100DC9149 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,7 +126,6 @@
 		30F76BC816B7C82000DC9149 /* MenuView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_iPhone.xib; sourceTree = "<group>"; };
 		30F76BCA16B7C86300DC9149 /* MenuView_iPhone5x.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_iPhone5x.xib; sourceTree = "<group>"; };
 		30F76BCC16B7C87400DC9149 /* GameView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameView_iPhone.xib; sourceTree = "<group>"; };
-		30F76BCE16B7C89100DC9149 /* GameView_iPhone5x.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameView_iPhone5x.xib; sourceTree = "<group>"; };
 		30F76BD016B7C8FF00DC9149 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuController.h; sourceTree = "<group>"; };
 		30F76BD116B7C8FF00DC9149 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
 		30F76BD316B7C91100DC9149 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
@@ -152,7 +156,6 @@
 				30F76BA416B7C79100DC9149 /* UIKit.framework in Frameworks */,
 				30F76BA616B7C79100DC9149 /* Foundation.framework in Frameworks */,
 				30F76BA816B7C79100DC9149 /* CoreGraphics.framework in Frameworks */,
-				30F76BAA16B7C79100DC9149 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +174,43 @@
 				302EDF5E16BD8D330000604C /* complete.wav */,
 			);
 			name = sounds;
+			sourceTree = "<group>";
+		};
+		3078F9EC16C3910700AC36AF /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				302EDF2B16BD5F490000604C /* cat_free_01.png */,
+				302EDF2C16BD5F490000604C /* cat_free_02.png */,
+				302EDF2D16BD5F490000604C /* footer_6_DOWN.png */,
+				302EDF2E16BD5F490000604C /* footer_6_UP.png */,
+				302EDF2F16BD5F490000604C /* footer_9_DOWN.png */,
+				302EDF3016BD5F490000604C /* footer_9_UP.png */,
+				302EDF3116BD5F490000604C /* footer_12_DOWN.png */,
+				302EDF3216BD5F490000604C /* footer_12_UP.png */,
+				302EDF3316BD5F490000604C /* footer_menu_btn_DOWN.png */,
+				302EDF3416BD5F490000604C /* footer_menu_btn_UP.png */,
+				302EDF3516BD5F490000604C /* footer_reload_DOWN.png */,
+				302EDF3616BD5F490000604C /* footer_reload_UP.png */,
+				302EDF3716BD5F490000604C /* header_catpuzzle.png */,
+				302EDF3816BD5F490000604C /* header_footer_cat_logo_DOWN.png */,
+				302EDF3916BD5F490000604C /* header_footer_cat_logo_UP.png */,
+				302EDF3A16BD5F490000604C /* header_sound_ON.png */,
+				302EDF3B16BD5F490000604C /* header_soundOFF.png */,
+				302EDF3C16BD5F490000604C /* icon_57x57.png */,
+				302EDF3D16BD5F490000604C /* icon_114x114.png */,
+			);
+			name = textures;
+			sourceTree = "<group>";
+		};
+		3078F9F316C3D12300AC36AF /* MKStoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				3078F9ED16C3D11600AC36AF /* MKStoreManager.h */,
+				3078F9EE16C3D11600AC36AF /* MKStoreManager.m */,
+				3078F9EF16C3D11600AC36AF /* MKStoreObserver.h */,
+				3078F9F016C3D11600AC36AF /* MKStoreObserver.m */,
+			);
+			name = MKStoreKit;
 			sourceTree = "<group>";
 		};
 		30F76B9416B7C79100DC9149 = {
@@ -202,7 +242,6 @@
 				30F76BA316B7C79100DC9149 /* UIKit.framework */,
 				30F76BA516B7C79100DC9149 /* Foundation.framework */,
 				30F76BA716B7C79100DC9149 /* CoreGraphics.framework */,
-				30F76BA916B7C79100DC9149 /* CoreData.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -225,26 +264,8 @@
 		30F76BAC16B7C79100DC9149 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3078F9EC16C3910700AC36AF /* textures */,
 				302EDF5816BD8CE00000604C /* sounds */,
-				302EDF2B16BD5F490000604C /* cat_free_01.png */,
-				302EDF2C16BD5F490000604C /* cat_free_02.png */,
-				302EDF2D16BD5F490000604C /* footer_6_DOWN.png */,
-				302EDF2E16BD5F490000604C /* footer_6_UP.png */,
-				302EDF2F16BD5F490000604C /* footer_9_DOWN.png */,
-				302EDF3016BD5F490000604C /* footer_9_UP.png */,
-				302EDF3116BD5F490000604C /* footer_12_DOWN.png */,
-				302EDF3216BD5F490000604C /* footer_12_UP.png */,
-				302EDF3316BD5F490000604C /* footer_menu_btn_DOWN.png */,
-				302EDF3416BD5F490000604C /* footer_menu_btn_UP.png */,
-				302EDF3516BD5F490000604C /* footer_reload_DOWN.png */,
-				302EDF3616BD5F490000604C /* footer_reload_UP.png */,
-				302EDF3716BD5F490000604C /* header_catpuzzle.png */,
-				302EDF3816BD5F490000604C /* header_footer_cat_logo_DOWN.png */,
-				302EDF3916BD5F490000604C /* header_footer_cat_logo_UP.png */,
-				302EDF3A16BD5F490000604C /* header_sound_ON.png */,
-				302EDF3B16BD5F490000604C /* header_soundOFF.png */,
-				302EDF3C16BD5F490000604C /* icon_57x57.png */,
-				302EDF3D16BD5F490000604C /* icon_114x114.png */,
 				30F76BAD16B7C79100DC9149 /* PuzzleGame-Info.plist */,
 				30F76BAE16B7C79100DC9149 /* InfoPlist.strings */,
 				30F76BB116B7C79100DC9149 /* main.m */,
@@ -280,7 +301,7 @@
 				30F76BC816B7C82000DC9149 /* MenuView_iPhone.xib */,
 				30F76BCA16B7C86300DC9149 /* MenuView_iPhone5x.xib */,
 				30F76BCC16B7C87400DC9149 /* GameView_iPhone.xib */,
-				30F76BCE16B7C89100DC9149 /* GameView_iPhone5x.xib */,
+				3078F9F416C3E69700AC36AF /* GameView_iPhone5x.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -288,6 +309,7 @@
 		30F76BC716B7C7E400DC9149 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3078F9F316C3D12300AC36AF /* MKStoreKit */,
 				30F76BE016B7CAD200DC9149 /* Session.h */,
 				30F76BE116B7CAD200DC9149 /* Session.m */,
 				30F76BDD16B7CAAA00DC9149 /* H.h */,
@@ -382,7 +404,6 @@
 				30F76BC916B7C82000DC9149 /* MenuView_iPhone.xib in Resources */,
 				30F76BCB16B7C86300DC9149 /* MenuView_iPhone5x.xib in Resources */,
 				30F76BCD16B7C87400DC9149 /* GameView_iPhone.xib in Resources */,
-				30F76BCF16B7C89100DC9149 /* GameView_iPhone5x.xib in Resources */,
 				302EDF3E16BD5F490000604C /* cat_free_01.png in Resources */,
 				302EDF3F16BD5F490000604C /* cat_free_02.png in Resources */,
 				302EDF4016BD5F490000604C /* footer_6_DOWN.png in Resources */,
@@ -411,6 +432,7 @@
 				302EDF6316BD8D330000604C /* logon.wav in Resources */,
 				302EDF6416BD8D330000604C /* complete.wav in Resources */,
 				302EDF6C16BD9AA10000604C /* ambient.mp3 in Resources */,
+				3078F9F516C3E69700AC36AF /* GameView_iPhone5x.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +456,8 @@
 				30F76BF116B7D91400DC9149 /* Sprite.m in Sources */,
 				30F0865B16B81B5C00982C04 /* SpriteFactoryView.m in Sources */,
 				302EDF5716BD88290000604C /* SoundHelper.m in Sources */,
+				3078F9F116C3D11600AC36AF /* MKStoreManager.m in Sources */,
+				3078F9F216C3D11600AC36AF /* MKStoreObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
