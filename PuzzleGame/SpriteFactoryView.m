@@ -22,6 +22,8 @@
 
 @property (retain,nonatomic) NSString * currentKey;
 
+@property (retain,nonatomic) UIImageView * slideshowView;
+
 - (Sprite*) findColisionsWithSprite:(Sprite*)sprite;
 
 - (void) clearSprites;
@@ -61,8 +63,8 @@
         return;
     }
     
-    self.currentKey = key;
     [self clearSprites];
+    self.currentKey = key;
     
     if([self currentSprites] != nil) {
         NSArray * sprites = [self currentSprites];
@@ -203,10 +205,27 @@
         return;
     }
     
-    //TODO: game ended event;
     [SoundHelper playSound:SOUND_GAME_END];
+    
+    if(self.slideshowView == nil) {
+        
+        NSMutableArray * slides = [NSMutableArray new];
+        for (int i = 0; i < 10; i++) {
+            
+        }
+        
+        UIImageView * slideshowView = [UIImageView new];
+        slideshowView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+        slideshowView.animationImages = slides;
+        slideshowView.animationRepeatCount = 0;
+        slideshowView.animationDuration = 3;
+        
+        self.slideshowView = slideshowView;
+    }
+    
+    [self addSubview:self.slideshowView];
+    
     rmlog(@"game ended");
-    [H alert:@"" description:@"you win!"];
 }
 
 - (NSArray*) currentSprites {
