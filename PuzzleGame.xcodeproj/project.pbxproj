@@ -42,6 +42,9 @@
 		3078F9F116C3D11600AC36AF /* MKStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3078F9EE16C3D11600AC36AF /* MKStoreManager.m */; };
 		3078F9F216C3D11600AC36AF /* MKStoreObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3078F9F016C3D11600AC36AF /* MKStoreObserver.m */; };
 		3078F9F516C3E69700AC36AF /* GameView_iPhone5x.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3078F9F416C3E69700AC36AF /* GameView_iPhone5x.xib */; };
+		30A7FD8216CBD45A0056F5B0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 30A7FD8116CBD45A0056F5B0 /* Default.png */; };
+		30A7FD8416CBD45F0056F5B0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30A7FD8316CBD45F0056F5B0 /* Default@2x.png */; };
+		30A7FD8616CBD4630056F5B0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30A7FD8516CBD4630056F5B0 /* Default-568h@2x.png */; };
 		30F0865816B810C200982C04 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F0865716B810C200982C04 /* QuartzCore.framework */; };
 		30F0865B16B81B5C00982C04 /* SpriteFactoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F0865A16B81B5C00982C04 /* SpriteFactoryView.m */; };
 		30F76BA416B7C79100DC9149 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F76BA316B7C79100DC9149 /* UIKit.framework */; };
@@ -106,6 +109,9 @@
 		3078F9EF16C3D11600AC36AF /* MKStoreObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreObserver.h; sourceTree = "<group>"; };
 		3078F9F016C3D11600AC36AF /* MKStoreObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStoreObserver.m; sourceTree = "<group>"; };
 		3078F9F416C3E69700AC36AF /* GameView_iPhone5x.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameView_iPhone5x.xib; sourceTree = "<group>"; };
+		30A7FD8116CBD45A0056F5B0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		30A7FD8316CBD45F0056F5B0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		30A7FD8516CBD4630056F5B0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		30F0865716B810C200982C04 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		30F0865916B81B5C00982C04 /* SpriteFactoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteFactoryView.h; sourceTree = "<group>"; };
 		30F0865A16B81B5C00982C04 /* SpriteFactoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteFactoryView.m; sourceTree = "<group>"; };
@@ -216,6 +222,9 @@
 		30F76B9416B7C79100DC9149 = {
 			isa = PBXGroup;
 			children = (
+				30A7FD8516CBD4630056F5B0 /* Default-568h@2x.png */,
+				30A7FD8316CBD45F0056F5B0 /* Default@2x.png */,
+				30A7FD8116CBD45A0056F5B0 /* Default.png */,
 				302EDF5316BD5F930000604C /* icon_114x114.png */,
 				302EDF5116BD5F8C0000604C /* icon_57x57.png */,
 				30F76BAB16B7C79100DC9149 /* PuzzleGame */,
@@ -433,6 +442,9 @@
 				302EDF6416BD8D330000604C /* complete.wav in Resources */,
 				302EDF6C16BD9AA10000604C /* ambient.mp3 in Resources */,
 				3078F9F516C3E69700AC36AF /* GameView_iPhone5x.xib in Resources */,
+				30A7FD8216CBD45A0056F5B0 /* Default.png in Resources */,
+				30A7FD8416CBD45F0056F5B0 /* Default@2x.png in Resources */,
+				30A7FD8616CBD4630056F5B0 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
 #define GAME_BORDER 4
 
 #define GAME_WIDTH 300
-#define GAME_HEIGHT 382
+#define GAME_HEIGHT 380
 
 
 @interface SpriteFactoryView()

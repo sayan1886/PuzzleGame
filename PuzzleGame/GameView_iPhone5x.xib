@@ -107,7 +107,7 @@
 					<object class="IBUIView" id="45926113">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{6, 89}, {308, 390}}</string>
+						<string key="NSFrame">{{6, 89}, {308, 388}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="419032018"/>
@@ -562,16 +562,11 @@
 					<string key="superclassName">BaseController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="selectedBack:">UIButton</string>
-						<string key="selectedGameMode:">UIButton</string>
 						<string key="tapSoundMute:">UIButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="selectedBack:">
 							<string key="name">selectedBack:</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBActionInfo" key="selectedGameMode:">
-							<string key="name">selectedGameMode:</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBActionInfo" key="tapSoundMute:">
